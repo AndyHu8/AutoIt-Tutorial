@@ -1,4 +1,3 @@
-#comments-start
 ;TEIL 1 EINLEITUNG
 ;Hello World
 $Name = "Andy"
@@ -13,9 +12,6 @@ MsgBox(64, "Answer", $Answer & " OK DU HUND") ;& = Conca
 $sName = "Name"
 $iAlter = 22
 $bHatBrille = False
-#comments-start
-Hallo
-#comments-end
 $iSumme = 12
 $sVorname = "Andy"
 $sNachname = '"Hu"'
@@ -24,7 +20,6 @@ ConsoleWrite(@CRLF & $sVollerName) ;@CRLF = leere Zeilen
 
 $iJahr = 1990 + $iSumme
 ConsoleWrite("Aktuelles Jahr: " & $iJahr)
-
 
 ;TEIL 3 SCHLEIFEN
 $zBier = 10
@@ -45,9 +40,44 @@ Func berechne_summe($summand1, $summand2)
 EndFunc
 Local $summe = berechne_summe(1, 2)
 MsgBox(0, "", $summe)
-#comments-end
 
 ;TEIL 5 ARRAYS
+#include <array.au3> ;wie Biblio => gibt fkt.
+$array[2]
+$array[0] = "erster eintrag"
+$array[1] = "zweiter eintrag"
+$aArray_1[12] = [3, 7.5, "string"]
+$aaArray_2[2][4] = [1, 2, 3, 4], [5, 6, 7, 8]
+_ArrayDisplay($aArray)
+
+;TEIL 6 GUI und Buttons
+#include <GUIConstantsEx.au3>
+
+Example()
+
+Func Example()
+    ; Create a GUI with various controls.
+    Local $hGUI = GUICreate("Example")
+    Local $idOK = GUICtrlCreateButton("OK", 310, 370, 85, 25)
+
+    ; Display the GUI.
+    GUISetState(@SW_SHOW, $hGUI)
+
+    ; Loop until the user exits.
+    While 1
+        Switch GUIGetMsg()
+            Case $GUI_EVENT_CLOSE, $idOK
+                ExitLoop
+
+        EndSwitch
+    WEnd
+
+    ; Delete the previous GUI and all controls.
+    GUIDelete($hGUI)
+ EndFunc   ;==>Example
+
+ ;TEIL 7 Cordmode und Style von GUIControls
+
 
 
 
